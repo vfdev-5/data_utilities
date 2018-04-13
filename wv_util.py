@@ -52,9 +52,9 @@ def get_labels(fname):
     with open(fname) as f:
         data = json.load(f)
 
-    coords = np.zeros((len(data['features']),4))
-    chips = np.zeros((len(data['features'])),dtype="object")
-    classes = np.zeros((len(data['features'])))
+    coords = np.zeros((len(data['features']), 4), dtype=np.int)
+    chips = np.zeros((len(data['features'])), dtype="object")
+    classes = np.zeros((len(data['features'])), dtype=np.int)
 
     for i in tqdm(range(len(data['features']))):
         if data['features'][i]['properties']['bounds_imcoords'] != []:
